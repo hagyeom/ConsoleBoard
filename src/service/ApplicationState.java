@@ -7,4 +7,17 @@ import entity.User;
  * 현재 로그인된 사용자 정보를 저장하고 관리.
  */
 public class ApplicationState {
+    private User loggedInUser;
+
+    public User getLoggedInUser() {
+        return loggedInUser;
+    }
+
+    public void setLoggedInUser(User user) {
+        this.loggedInUser = user;
+    }
+
+    public boolean isLoggedIn() {
+        return loggedInUser != null;
+    }
 }
