@@ -89,11 +89,14 @@ public class PostService {
      * 게시글에 좋아요를 추가하는 메서드.
      *
      * @param postId 좋아요를 추가할 게시글의 ID
+     * @return 좋아요 성공 여부 (true: 성공, false: 실패)
      */
-    public void likePost(int postId) {
+    public boolean likePost(int postId) {
         Post post = postRepository.findById(postId);
         if (post != null) {
             post.incrementLikes();  // 좋아요 수 증가
+            return true;
         }
+        return false;
     }
 }

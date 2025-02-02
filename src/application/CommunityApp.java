@@ -63,7 +63,7 @@ public class CommunityApp {
         switch (choice) {
             case 1:
                 listPosts();
-                break;       // 게시글 목록 조회
+                break;       // 게시글 목록 보기
             case 2:
                 viewPostDetail();
                 break;  // 게시글 상세 조회
@@ -86,6 +86,9 @@ public class CommunityApp {
                 logout();
                 break;          // 로그아웃
             case 9:
+                likePost();
+                break;  // 좋아요 기능 추가
+            case 10:
                 shutdown();
                 break;        // 프로그램 종료
             default:
@@ -222,6 +225,21 @@ public class CommunityApp {
     private void logout() {
         userService.logout();
         output.print("로그아웃 되었습니다.");
+    }
+
+    /**
+     * 게시글에 좋아요를 추가하는 메서드.
+     * - 로그인 상태에서만 좋아요 가능.
+     */
+    private void likePost() {
+        if (!checkLoginState()) return;  // 로그인 상태 확인
+
+        int postId = input.getInt("좋아요를 누를 게시글 ID: ");
+        if (postService.likePost(postId)) {
+            output.print("좋아요를 눌렀습니다!");
+        } else {
+            output.print("게시글을 찾을 수 없습니다.");
+        }
     }
 
     // [공통 유틸리티] -----------------------------------------------------

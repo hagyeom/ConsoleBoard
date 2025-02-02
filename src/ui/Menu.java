@@ -17,7 +17,8 @@ public class Menu {
         System.out.println("6. 회원가입");
         System.out.println("7. 로그인");
         System.out.println("8. 로그아웃");
-        System.out.println("9. 종료");
+        System.out.println("9. 게시글 좋아요");
+        System.out.println("10. 종료");
     }
 
     /**
