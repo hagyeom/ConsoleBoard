@@ -7,16 +7,15 @@ import java.util.Date;
  * 게시글의 ID, 제목, 내용, 작성자, 좋아요 수, 조회수, 작성 일자 등을 관리.
  */
 public class Post {
-    private int postId;
-    private String title;
-    private String content;
-    private User author;
-    private int likes;
-    private int views;
-    private Date createDate;
-    private Date updatedDate;
+    private int postId;          // 게시글의 고유 ID
+    private String title;        // 게시글의 제목
+    private String content;      // 게시글의 내용
+    private User author;         // 게시글 작성자 (User 객체)
+    private int likes;           // 좋아요 수
+    private int views;           // 조회수
+    private Date createdDate;    // 게시글 작성 일자
+    private Date updatedDate;    // 게시글 수정 일자
 
-    // 생성자
     public Post(int postId, String title, String content, User author) {
         this.postId = postId;
         this.title = title;
@@ -24,7 +23,7 @@ public class Post {
         this.author = author;
         this.likes = 0;
         this.views = 0;
-        this.createDate = new Date();
+        this.createdDate = new Date();
         this.updatedDate = new Date();
     }
 
@@ -49,7 +48,7 @@ public class Post {
         return content;
     }
 
-    public void setContent() {
+    public void setContent(String content) {
         this.content = content;
     }
 
@@ -57,7 +56,7 @@ public class Post {
         return author;
     }
 
-    public void setAuthor() {
+    public void setAuthor(User author) {
         this.author = author;
     }
 
@@ -65,7 +64,7 @@ public class Post {
         return likes;
     }
 
-    public void setLikes() {
+    public void setLikes(int likes) {
         this.likes = likes;
     }
 
@@ -77,12 +76,12 @@ public class Post {
         this.views = views;
     }
 
-    public Date getCreateDate() {
-        return createDate;
+    public Date getCreatedDate() {
+        return createdDate;
     }
 
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
     }
 
     public Date getUpdatedDate() {
@@ -93,21 +92,35 @@ public class Post {
         this.updatedDate = updatedDate;
     }
 
-    // 메서드
+    /**
+     * 좋아요 수를 1 증가시키는 메서드.
+     */
     public void incrementLikes() {
         this.likes++;
     }
 
+    /**
+     * 조회수를 1 증가시키는 메서드.
+     */
     public void incrementViews() {
         this.views++;
     }
 
-    public void updateConent(String newContent) {
+    /**
+     * 게시글 내용을 수정하는 메서드.
+     *
+     * @param newContent 새로운 내용
+     */
+    public void updateContent(String newContent) {
         this.content = newContent;
     }
 
+    /**
+     * 게시글 제목을 수정하는 메서드.
+     *
+     * @param newTitle 새로운 제목
+     */
     public void updateTitle(String newTitle) {
         this.title = newTitle;
     }
-
 }

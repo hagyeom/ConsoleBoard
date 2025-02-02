@@ -5,6 +5,9 @@ package ui;
  * 메인 메뉴를 출력하고 사용자 선택을 받는 기능을 제공.
  */
 public class Menu {
+    /**
+     * 메인 메뉴를 출력하는 메서드.
+     */
     public void displayMainMenu() {
         System.out.println("1. 게시글 목록 보기");
         System.out.println("2. 게시글 작성");
@@ -15,6 +18,12 @@ public class Menu {
         System.out.println("7. 종료");
     }
 
+    /**
+     * 사용자 선택을 입력받는 메서드.
+     *
+     * @param input 콘솔 입력 객체
+     * @return 사용자가 선택한 메뉴 번호
+     */
     public int getChoice(ConsoleInput input) {
         return input.getInt("선택: ");
     }
