@@ -10,12 +10,14 @@ public class Menu {
      */
     public void displayMainMenu() {
         System.out.println("1. 게시글 목록 보기");
-        System.out.println("2. 게시글 작성");
-        System.out.println("3. 게시글 수정");
-        System.out.println("4. 게시글 삭제");
-        System.out.println("5. 로그인");
-        System.out.println("6. 로그아웃");
-        System.out.println("7. 종료");
+        System.out.println("2. 게시글 상세 조회");
+        System.out.println("3. 게시글 작성");
+        System.out.println("4. 게시글 수정");
+        System.out.println("5. 게시글 삭제");
+        System.out.println("6. 회원가입");
+        System.out.println("7. 로그인");
+        System.out.println("8. 로그아웃");
+        System.out.println("9. 종료");
     }
 
     /**

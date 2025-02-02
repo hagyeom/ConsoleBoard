@@ -80,4 +80,16 @@ public class UserService {
         }
         return false;
     }
+
+    /**
+     * 회원가입 시 이용되는 메서드
+     */
+
+    public User findById(String userId) {
+        return userRepository.findById(userId);
+    }
+
+    public User findByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
 }
