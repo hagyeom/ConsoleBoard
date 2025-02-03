@@ -57,7 +57,7 @@ public class CommunityApp {
     /**
      * 사용자 입력에 따른 기능 분기 처리
      *
-     * @param choice 사용자가 선택한 메뉴 번호 (1~9)
+     * @param choice 사용자가 선택한 메뉴 번호 (1~10)
      */
     private void handleUserInput(int choice) {
         switch (choice) {
